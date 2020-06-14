@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,9 @@
 		942F6F0D204CE2DB00FE3650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942F6F0B204CE2DB00FE3650 /* Main.storyboard */; };
 		942F6F0F204CE2DB00FE3650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942F6F0E204CE2DB00FE3650 /* Assets.xcassets */; };
 		942F6F12204CE2DB00FE3650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942F6F10204CE2DB00FE3650 /* LaunchScreen.storyboard */; };
-		942F6F1A204D159A00FE3650 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 942F6F19204D159A00FE3650 /* script.js */; };
+		B0024E162496931E00C5CC04 /* AdObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0024E152496931E00C5CC04 /* AdObserver.swift */; };
+		B0024E1824969D5700C5CC04 /* AdPlaceholderRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0024E1724969D5700C5CC04 /* AdPlaceholderRect.swift */; };
+		B0024E1A2496B9BB00C5CC04 /* AdPlaceholderTrackerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0024E192496B9BB00C5CC04 /* AdPlaceholderTrackerMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +25,9 @@
 		942F6F0E204CE2DB00FE3650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		942F6F11204CE2DB00FE3650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		942F6F13204CE2DC00FE3650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		942F6F19204D159A00FE3650 /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		B0024E152496931E00C5CC04 /* AdObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdObserver.swift; sourceTree = "<group>"; };
+		B0024E1724969D5700C5CC04 /* AdPlaceholderRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPlaceholderRect.swift; sourceTree = "<group>"; };
+		B0024E192496B9BB00C5CC04 /* AdPlaceholderTrackerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPlaceholderTrackerMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 		942F6EFB204CE2DB00FE3650 = {
 			isa = PBXGroup;
 			children = (
+				B0024E12249681FC00C5CC04 /* webapp */,
 				942F6F06204CE2DB00FE3650 /* WKWebViewDemoApp */,
 				942F6F05204CE2DB00FE3650 /* Products */,
 			);
@@ -58,13 +63,22 @@
 			children = (
 				942F6F07204CE2DB00FE3650 /* AppDelegate.swift */,
 				942F6F09204CE2DB00FE3650 /* ViewController.swift */,
-				942F6F19204D159A00FE3650 /* script.js */,
 				942F6F0B204CE2DB00FE3650 /* Main.storyboard */,
 				942F6F0E204CE2DB00FE3650 /* Assets.xcassets */,
 				942F6F10204CE2DB00FE3650 /* LaunchScreen.storyboard */,
 				942F6F13204CE2DC00FE3650 /* Info.plist */,
+				B0024E152496931E00C5CC04 /* AdObserver.swift */,
+				B0024E1724969D5700C5CC04 /* AdPlaceholderRect.swift */,
+				B0024E192496B9BB00C5CC04 /* AdPlaceholderTrackerMessage.swift */,
 			);
 			path = WKWebViewDemoApp;
+			sourceTree = "<group>";
+		};
+		B0024E12249681FC00C5CC04 /* webapp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = webapp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,17 +108,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = "Raymond Kim";
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Joseph Kohlmann";
 				TargetAttributes = {
 					942F6F03204CE2DB00FE3650 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1150;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 942F6EFF204CE2DB00FE3650 /* Build configuration list for PBXProject "WKWebViewDemoApp" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -127,7 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				942F6F12204CE2DB00FE3650 /* LaunchScreen.storyboard in Resources */,
-				942F6F1A204D159A00FE3650 /* script.js in Resources */,
 				942F6F0F204CE2DB00FE3650 /* Assets.xcassets in Resources */,
 				942F6F0D204CE2DB00FE3650 /* Main.storyboard in Resources */,
 			);
@@ -142,6 +156,9 @@
 			files = (
 				942F6F0A204CE2DB00FE3650 /* ViewController.swift in Sources */,
 				942F6F08204CE2DB00FE3650 /* AppDelegate.swift in Sources */,
+				B0024E162496931E00C5CC04 /* AdObserver.swift in Sources */,
+				B0024E1824969D5700C5CC04 /* AdPlaceholderRect.swift in Sources */,
+				B0024E1A2496B9BB00C5CC04 /* AdPlaceholderTrackerMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +198,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -188,6 +206,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -215,7 +234,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -238,6 +257,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -245,6 +265,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -266,10 +287,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -279,12 +301,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49BZEB79BF;
+				DEVELOPMENT_TEAM = FL458598BU;
 				INFOPLIST_FILE = WKWebViewDemoApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.WKWebViewDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -294,12 +319,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49BZEB79BF;
+				DEVELOPMENT_TEAM = FL458598BU;
 				INFOPLIST_FILE = WKWebViewDemoApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.WKWebViewDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -1,0 +1,11 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.ad-placeholder {
+  background: #eee;
+  margin: 20px auto;
+  max-width: 900px;
+  height: 200px;
+}

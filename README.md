@@ -27,14 +27,12 @@ This is based on an approach that I described [via Slack](https://nytimes.slack.
 2. Within the webview, we [set up a `window.onmessage` event listener](https://github.com/kohlmannj/WKWebViewDemoApp/blob/91ee589/webapp/src/index.ts#L47) that listens for messages with specific string values. This allows us to use messages as a convention for communicating between native and web code.
 3. Back in native code, we use a WKNavigationDelegate extension on the view controller to call `window.postMessage('startTrackingAdPlaceholders')` once the web page has finished loading.
 4. Once the web page receives the `'startTrackingAdPlaceholders'` message, it [starts tracking the `.ad-placeholder` elements](https://github.com/kohlmannj/WKWebViewDemoApp/blob/91ee589/webapp/src/index.ts#L23). We use a `requestAnimationFrame()` callback for each element to get its `DOMRect` (i.e. `element.getBoundingClientRect()`) and then call `window.webkit.messageHandlers.adPlaceholderTracker.postMessage()`.
-
-- We [stringify the message contents](./webapp/src/index.ts#L10) beforehand, but you can see the shape of the message here: [AdPlaceholderTrackerMessage](./webapp/globals.d.ts#L21-L25)
+    - We [stringify the message contents](./webapp/src/index.ts#L10) beforehand, but you can see the shape of the message here: [AdPlaceholderTrackerMessage](./webapp/globals.d.ts#L21-L25)
 
 5. Back in native code, we use a WKScriptMessageHandler extension and [`userContentController(:_didReceive:)`](https://developer.apple.com/documentation/webkit/wkscriptmessagehandler/1396222-usercontentcontroller) to receive the message in string form from the web app. We [deserialize the message](https://github.com/kohlmannj/WKWebViewDemoApp/blob/91ee589/WKWebViewDemoApp/ViewController.swift#L74) into the equivalent native data structure using [JSONSerialization.jsonObject(with:options)](https://developer.apple.com/documentation/foundation/jsonserialization/1415493-jsonobject) and then do the following:
-
-- If the message says to **add** an ad placeholder, we instantiate a new [AdObserver class](./WKWebViewDemoApp/AdObserver.swift#L15) and add it to the view controller's `self.ads` dictionary
-- If the message says to **update** an ad placeholder, we ensure that we know about this ad already, and then update the corresponding AdObserver instance's view's `frame` by calling [`AdObserver.update()`](./WKWebViewDemoApp/AdObserver.swift#L35-L37)
-- If the message says to **remove** an ad placeholder, we remove the corresponding AdObserver instance from the view controller's `self.ads` dictionary.
+    - If the message says to **add** an ad placeholder, we instantiate a new [AdObserver class](./WKWebViewDemoApp/AdObserver.swift#L15) and add it to the view controller's `self.ads` dictionary
+    - If the message says to **update** an ad placeholder, we ensure that we know about this ad already, and then update the corresponding AdObserver instance's view's `frame` by calling [`AdObserver.update()`](./WKWebViewDemoApp/AdObserver.swift#L35-L37)
+    - If the message says to **remove** an ad placeholder, we remove the corresponding AdObserver instance from the view controller's `self.ads` dictionary.
 
 ## Possible Performance Optimizations
 

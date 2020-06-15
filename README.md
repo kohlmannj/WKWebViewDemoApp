@@ -4,7 +4,7 @@
 
 This fork of [rckim77/WKWebViewDemoApp](https://github.com/rckim77/WKWebViewDemoApp) demonstrates an approach to overlaying a number of UIViews on top of corresponding "ad-placeholder" elements within a web page:
 
-![demo](/Users/joseph/Sites/kohlmannj/WKWebViewDemoApp/demo.gif)
+![demo](./demo.gif)
 
 This is based on an approach that I described [via Slack](https://nytimes.slack.com/archives/C02CBD553/p1591976624220600?thread_ts=1591637639.184000&cid=C02CBD553).
 

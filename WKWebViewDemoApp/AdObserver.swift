@@ -38,8 +38,5 @@ class AdObserver {
 
     private func buildAdView() -> Void {
         adView.backgroundColor = .green
-        let label = UILabel()
-        label.text = self.id
-        label.drawText(in: adView.bounds)
     }
 }

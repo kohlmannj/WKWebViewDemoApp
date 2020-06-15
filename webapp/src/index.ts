@@ -2,8 +2,10 @@ function adPlaceholderTrackerPostMessage(message: AdPlaceholderTrackerMessage): 
   let tracker;
 
   if (typeof adPlaceholderTracker !== 'undefined') {
+    // Android WebView
     tracker = adPlaceholderTracker;
   } else if (typeof window !== 'undefined') {
+    // iOS WKWebView / WKUserContentController
     tracker = window.webkit?.messageHandlers?.adPlaceholderTracker;
   }
 
